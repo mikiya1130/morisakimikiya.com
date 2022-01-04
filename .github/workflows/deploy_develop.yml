@@ -1,9 +1,9 @@
-name: deploy
+name: deploy_develop
 
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   deploy:
@@ -21,4 +21,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.HOSTNAME }}
       - name: rsync deploy
-        run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR }}
+        run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR_DEV }}
