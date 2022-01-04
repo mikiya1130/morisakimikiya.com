@@ -1,0 +1,22 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: gulp build
+        uses: actions/setup-node@v1
+      - run: yarn install && yarn build
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.HOSTNAME }}
+      - name: rsync deploy
+        run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR }}
