@@ -16,9 +16,15 @@ const styles = {
   },
 };
 
+const fonts = {
+  heading: `'Sriracha', 'Noto Sans JP'`,
+  body: `Noto Sans JP`,
+};
+
 const theme = extendTheme({
   colors,
   styles,
+  fonts,
 });
 
 export default theme;

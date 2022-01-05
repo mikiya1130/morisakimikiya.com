@@ -776,6 +776,16 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/noto-sans-jp@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans-jp/-/noto-sans-jp-4.5.2.tgz#f0072160a90ec2ede01a9c6039d74e7e57844767"
+  integrity sha512-CWvI1kXjswI8BKdGLwFZ9CfNLQBsaFi1oBF8cjv45TcYZXSaNKDuY/eziijGnn6so8TzU4bc+88izwQjb0PCmQ==
+
+"@fontsource/sriracha@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/sriracha/-/sriracha-4.5.0.tgz#68055b7833fffd965d61ad3bb082771c5a217a6a"
+  integrity sha512-MkbDrEpMWSkHc+oYpJkv/F+l9n9vq8RUauO58tM80WZ8zeFJ+0rT2GhGlWkwgh6v5X8qUgLFL6s1VkI/98Hd9g==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"
