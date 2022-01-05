@@ -14,7 +14,7 @@ const ContentBox = ({ icon, title, children }: Props) => {
       {title != undefined && (
         <Heading>
           <Center>
-            {icon != undefined && <Icon as={icon} />}
+            {icon != undefined && <Icon as={icon} mr={2} />}
             {title}
           </Center>
         </Heading>
