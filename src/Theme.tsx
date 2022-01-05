@@ -11,7 +11,7 @@ const colors = {
 const styles = {
   global: {
     body: {
-      bg: 'black',
+      bg: 'teal',
     },
   },
 };
