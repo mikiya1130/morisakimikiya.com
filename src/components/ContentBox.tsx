@@ -12,7 +12,7 @@ const ContentBox = ({ icon, title, children }: Props) => {
   return (
     <Box w='full' p={4} borderRadius={20} bg='white' color='black'>
       {title != undefined && (
-        <Heading>
+        <Heading mb={4}>
           <Center>
             {icon != undefined && <Icon as={icon} mr={2} />}
             {title}
