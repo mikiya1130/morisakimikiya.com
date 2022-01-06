@@ -1,5 +1,5 @@
 import { Text } from '@chakra-ui/react';
-import ContentBox from '@/components/customize/ContentBox';
+import ContentBox from '@/components/ContentBox';
 
 const Message = () => {
   return (

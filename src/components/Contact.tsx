@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { MdMail } from 'react-icons/md';
-import ContentBox from '@/components/customize/ContentBox';
+import ContentBox from '@/components/ContentBox';
 
 const Contact = () => {
   return (

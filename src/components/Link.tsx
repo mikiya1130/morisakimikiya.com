@@ -1,6 +1,6 @@
 import { Text } from '@chakra-ui/react';
 import { MdLink } from 'react-icons/md';
-import ContentBox from '@/components/customize/ContentBox';
+import ContentBox from '@/components/ContentBox';
 
 const Link = () => {
   return (
