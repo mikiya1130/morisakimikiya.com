@@ -1,5 +1,5 @@
 import { AspectRatio, Heading, useBreakpointValue } from '@chakra-ui/react';
-import ContentBox from '@/components/ContentBox';
+import ContentBox from '@/components/customize/ContentBox';
 
 const Header = () => {
   return (
