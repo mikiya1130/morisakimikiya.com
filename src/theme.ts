@@ -14,6 +14,9 @@ const styles = {
       bg: 'teal',
       lineHeight: '1.8em',
     },
+    img: {
+      pointerEvents: 'none',
+    },
   },
 };
 
