@@ -12,6 +12,7 @@ const styles = {
   global: {
     body: {
       bg: 'teal',
+      lineHeight: '1.8em',
     },
   },
 };
