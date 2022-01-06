@@ -5,7 +5,7 @@ import ContentBox from '@/components/ContentBox';
 const Profile = () => {
   return (
     <ContentBox icon={MdPerson} title='PROFILE'>
-      <Text>{'profile'}</Text>
+      <Text>profile</Text>
     </ContentBox>
   );
 };

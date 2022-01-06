@@ -5,7 +5,7 @@ import ContentBox from '@/components/ContentBox';
 const Skill = () => {
   return (
     <ContentBox icon={MdCode} title='SKILL'>
-      <Text>{'skill'}</Text>
+      <Text>skill</Text>
     </ContentBox>
   );
 };

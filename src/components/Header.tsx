@@ -14,7 +14,7 @@ const Header = () => {
                     2px -2px var(--chakra-colors-teal),
                     -2px -2px var(--chakra-colors-teal)'
         >
-          {'Morisaki Mikiya'}
+          Morisaki Mikiya
         </Heading>
       </AspectRatio>
     </ContentBox>
