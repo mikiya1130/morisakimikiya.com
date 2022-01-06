@@ -4,7 +4,13 @@ import ContentBox from '@/components/ContentBox';
 const Message = () => {
   return (
     <ContentBox>
-      <Text>message</Text>
+      <Text align='center'>
+        こんにちは
+        <br />
+        ご訪問ありがとうございます
+        <br />
+        ごゆっくりとお楽しみください
+      </Text>
     </ContentBox>
   );
 };
