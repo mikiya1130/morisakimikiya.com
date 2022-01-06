@@ -5,7 +5,7 @@ import ContentBox from '@/components/ContentBox';
 const Link = () => {
   return (
     <ContentBox icon={MdLink} title='LINK'>
-      <Text>{'link'}</Text>
+      <Text>link</Text>
     </ContentBox>
   );
 };

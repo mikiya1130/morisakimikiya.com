@@ -5,7 +5,7 @@ import ContentBox from '@/components/ContentBox';
 const Contact = () => {
   return (
     <ContentBox icon={MdMail} title='CONTACT'>
-      <Text>{'contact'}</Text>
+      <Text>contact</Text>
     </ContentBox>
   );
 };
