@@ -9,21 +9,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.HOSTNAME }}
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Checkout submodules
         shell: bash
         run: |
           git submodule sync --recursive
           git submodule update --init --force --recursive
-      - name: gulp build
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
       - run: yarn install && yarn build
-      - name: rsync deploy
+      - name: Deploy use rsync
         run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR_DEV }}
