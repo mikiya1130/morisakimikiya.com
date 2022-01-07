@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          submodules: true
+          submodules: 'recursive'
       - name: gulp build
         uses: actions/setup-node@v2
         with:
