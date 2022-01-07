@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
+        repository: mikiya1130/morisakimikiya.com.data
           ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           submodules: 'recursive'
       - name: Set up Node.js
