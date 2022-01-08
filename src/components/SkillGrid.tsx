@@ -5,14 +5,14 @@ import { IconType } from 'react-icons';
 import Star from '@/components/Star';
 
 type Props = {
-  language: string | string[];
+  title: string | string[];
   logo: string | string[] | IconType | IconType[];
   star: number;
   children: ReactNode;
 };
 
-const SkillGrid = ({ language, logo, star, children }: Props) => {
-  const languageList = isArray<string>(language) ? language : [language];
+const SkillGrid = ({ title, logo, star, children }: Props) => {
+  const titleList = isArray<string>(title) ? title : [title];
   const logoList = isArray<string | IconType>(logo) ? logo : [logo];
 
   return (
@@ -23,18 +23,18 @@ const SkillGrid = ({ language, logo, star, children }: Props) => {
       boxShadow='0px 1px 1px 0px'
       placeItems='center'
       gap={4}
-      templateAreas="'logo     language'
+      templateAreas="'logo     title'
                      'logo     star'
                      'content content'"
       templateColumns='70px 1fr'
       templateRows='max-content max-content 1fr'
     >
-      <GridItem gridArea='language'>
-        <Heading as='h3' size='md'>
-          {languageList.map((language: string, index: number) => (
+      <GridItem gridArea='title'>
+        <Heading as='h4' size='md'>
+          {titleList.map((title: string, index: number) => (
             <>
               {index !== 0 && ' / '}
-              {language}
+              {title}
             </>
           ))}
         </Heading>
