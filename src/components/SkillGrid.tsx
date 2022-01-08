@@ -18,7 +18,8 @@ const SkillGrid = ({ title, logo, star, children }: Props) => {
   return (
     <Grid
       p={2}
-      border='1px solid black'
+      border='1px solid'
+      borderColor='black'
       borderRadius='20px'
       boxShadow='0px 1px 1px 0px'
       placeItems='center'

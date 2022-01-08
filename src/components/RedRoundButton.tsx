@@ -11,7 +11,8 @@ const RedRoundButton = ({ children, ...buttonProps }: Props) => {
   return (
     <Button
       outline='none'
-      border='2px solid red'
+      border='2px solid'
+      borderColor='red'
       borderRadius='20px'
       bg='white'
       color='red'
