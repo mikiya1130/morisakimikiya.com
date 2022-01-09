@@ -1,6 +1,6 @@
 import { Grid, GridItem, Heading, Icon, Image, Wrap } from '@chakra-ui/react';
 import { isArray } from '@chakra-ui/utils';
-import { ReactNode } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import Star from '@/components/Star';
 
@@ -33,10 +33,10 @@ const SkillGrid = ({ title, logo, star, children }: Props) => {
       <GridItem gridArea='title'>
         <Heading as='h4' size='md'>
           {titleList.map((title: string, index: number) => (
-            <>
+            <Fragment key={index}>
               {index !== 0 && ' / '}
               {title}
-            </>
+            </Fragment>
           ))}
         </Heading>
       </GridItem>
