@@ -1,4 +1,5 @@
-import { Center } from '@chakra-ui/react';
+import { Center, Text } from '@chakra-ui/react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MdMail } from 'react-icons/md';
 import ContentBox from '@/components/ContentBox';
@@ -15,18 +16,29 @@ const Contact = () => {
   } = useForm<FormDataType>({
     mode: 'all',
   });
+  const [result, setResult] = useState<string>('');
 
-  function onSubmit(values: FormDataType) {
-    return new Promise(() => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        reset();
-      }, 100);
-    });
-  }
+  const onSubmit = async (data: FormDataType) => {
+    fetch('send_mail.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((response: Response) => response.json())
+      .then((data) => {
+        if (data.status === 'ok') {
+          setResult('送信が完了しました。お問い合わせありがとうございました。');
+          reset();
+        } else {
+          throw 'error';
+        }
+      })
+      .catch(() => setResult('送信に失敗しました。'));
+  };
 
   return (
     <ContentBox icon={MdMail} title='CONTACT'>
+      <Text>{result}</Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormItem
           kind='input'
