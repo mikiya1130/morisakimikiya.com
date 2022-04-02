@@ -10,7 +10,18 @@ jobs:
   run-linters:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.HOSTNAME }}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --force --recursive
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:

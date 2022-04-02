@@ -1,0 +1,3 @@
+[submodule "src/data"]
+	path = src/data
+	url = git@github.com:mikiya1130/morisakimikiya.com.data.git
