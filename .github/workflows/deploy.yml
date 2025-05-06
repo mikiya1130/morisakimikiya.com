@@ -15,16 +15,16 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.HOSTNAME }}
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Checkout submodules
         shell: bash
         run: |
           git submodule sync --recursive
           git submodule update --init --force --recursive
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '22'
       - run: yarn install && yarn build
       - name: Deploy use rsync
         run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR }}
