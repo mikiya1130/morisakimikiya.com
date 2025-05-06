@@ -9,7 +9,7 @@ type Props = {
   label: string;
   error?: FieldError;
   register: UseFormRegister<FormDataType>;
-  options: RegisterOptions;
+  options: RegisterOptions<FormDataType, FormIdType>;
 };
 
 const FormItem = ({ kind, id, label, error, register, options }: Props) => {
