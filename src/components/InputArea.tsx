@@ -6,7 +6,7 @@ type Props = {
   kind: 'input' | 'textarea';
   id: FormIdType;
   register: UseFormRegister<FormDataType>;
-  options: RegisterOptions;
+  options: RegisterOptions<FormDataType, FormIdType>;
 };
 
 const InputArea = ({ kind, id, register, options }: Props) => {

@@ -1,5 +1,4 @@
 import { Grid, GridItem, Heading, Icon, Image, Wrap } from '@chakra-ui/react';
-import { isArray } from '@chakra-ui/utils';
 import { Fragment, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import Star from '@/components/Star';
@@ -12,8 +11,8 @@ type Props = {
 };
 
 const SkillGrid = ({ title, logo, star, children }: Props) => {
-  const titleList = isArray<string>(title) ? title : [title];
-  const logoList = isArray<string | IconType>(logo) ? logo : [logo];
+  const titleList = Array.isArray(title) ? title : [title];
+  const logoList = Array.isArray(logo) ? logo : [logo];
 
   return (
     <Grid
