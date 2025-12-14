@@ -2,7 +2,7 @@ import { AspectRatio, Box, Heading, useBreakpointValue } from '@chakra-ui/react'
 import { useEffect, useState } from 'react';
 import ContentBox from '@/components/ContentBox';
 
-const images = ['images/bike.jpg', 'images/ocarina.jpg', 'images/tuba.jpg'];
+const images = ['images/tuba.jpg', 'images/ocarina.jpg', 'images/bike.jpg'];
 
 const Header = () => {
   const [index, setIndex] = useState(0);
