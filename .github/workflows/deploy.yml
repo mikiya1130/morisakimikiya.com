@@ -15,14 +15,14 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           known_hosts: ${{ secrets.HOSTNAME }}
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Checkout submodules
         shell: bash
         run: |
           git submodule sync --recursive
           git submodule update --init --force --recursive
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '22'
       - run: yarn install && yarn build
