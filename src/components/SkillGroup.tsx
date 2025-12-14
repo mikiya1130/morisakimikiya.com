@@ -14,7 +14,7 @@ const SkillGroup = ({ name, skillList, cols }: Props) => {
       <Heading as='h3' my={4} size='lg'>
         {name}
       </Heading>
-      <SimpleGrid minChildWidth={`${750 / cols}px`} spacing={4}>
+      <SimpleGrid minChildWidth={{ base: '250px', sm: `${750 / cols}px` }} spacing={4}>
         {skillList.map((skill: SkillType, index: number) => (
           <SkillGrid key={index} title={skill.title} logo={skill.logo} star={skill.star}>
             {skill.content}
