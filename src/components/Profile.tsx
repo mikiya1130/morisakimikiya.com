@@ -5,7 +5,6 @@ import PersonalHistory from '@/components/PersonalHistory';
 import { exPersonalHistory, personalHistory } from '@/data/profile';
 
 const Profile = () => {
-
   return (
     <ContentBox icon={MdPerson} title='PROFILE'>
       <Flex direction={['column', null, 'row-reverse']} align='center' justify='space-evenly'>

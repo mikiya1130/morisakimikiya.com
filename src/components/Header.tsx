@@ -1,10 +1,11 @@
 import { AspectRatio, Box, Heading, useBreakpointValue } from '@chakra-ui/react';
-import ContentBox from '@/components/ContentBox';
 import { useEffect, useState } from 'react';
+import ContentBox from '@/components/ContentBox';
+
+const images = ['images/bike.jpg', 'images/ocarina.jpg', 'images/tuba.jpg'];
 
 const Header = () => {
   const [index, setIndex] = useState(0);
-  const images = ['images/bike.jpg', 'images/ocarina.jpg', 'images/tuba.jpg'];
 
   useEffect(() => {
     const interval = setInterval(() => {
