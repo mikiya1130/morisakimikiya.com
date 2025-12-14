@@ -5,7 +5,7 @@ const importResolverSettings = nextConfig[0]?.settings?.['import/resolver'] ?? {
 const baseNodeResolver = importResolverSettings.node ?? {};
 const baseTsResolver = importResolverSettings.typescript ?? {};
 
-export default [
+const config = [
   ...nextConfig,
   {
     name: 'project-customizations',
@@ -50,3 +50,5 @@ export default [
     },
   },
 ];
+
+export default config;
