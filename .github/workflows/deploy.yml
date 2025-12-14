@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '22'
+          node-version: '24'
       - run: yarn install && yarn build
       - name: Deploy use rsync
         run: rsync -vrlp -e "ssh -p ${{ secrets.PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./out/ ${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.OUTDIR }}
