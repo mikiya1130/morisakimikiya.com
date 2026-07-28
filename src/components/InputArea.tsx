@@ -14,7 +14,7 @@ const flushedBaseStyle = {
   transitionDuration: 'normal',
   borderBottom: '1px solid',
   borderColor: 'black',
-  _invalid: { borderColor: '#000000', boxShadow: '0px 1px 0px 0px #000000' },
+  _invalid: { borderColor: 'red', boxShadow: '0px 1px 0px 0px {colors.red}' },
   _focusVisible: { borderColor: 'teal', boxShadow: '0px 1px 0px 0px {colors.teal}' },
 };
 
