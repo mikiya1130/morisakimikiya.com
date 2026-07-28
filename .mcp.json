@@ -3,20 +3,14 @@
     "ark-ui": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@ark-ui/mcp"
-      ],
-      "env": { }
+      "args": ["-y", "@ark-ui/mcp"],
+      "env": {}
     },
     "panda": {
       "type": "stdio",
       "command": "npx",
-      "args": [
-        "panda",
-        "mcp"
-      ],
-      "env": { }
+      "args": ["panda", "mcp"],
+      "env": {}
     }
   }
 }
