@@ -2,6 +2,7 @@
   "name": "next-ts-eslint-prettier",
   "private": true,
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -17,23 +18,21 @@
     "printWidth": 100
   },
   "dependencies": {
-    "@chakra-ui/react": "^2",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11.14.1",
+    "@ark-ui/react": "^5.37.2",
     "@fontsource/noto-sans-jp": "^5.2.8",
     "@fontsource/sriracha": "^5.2.8",
-    "framer-motion": "^12.23.26",
-    "next": "^15",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "next": "^16",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "react-hook-form": "^7.68.0",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
+    "@pandacss/dev": "1.11.4",
     "@types/node": "^24",
-    "@types/react": "19.2.7",
+    "@types/react": "19.2.17",
     "eslint": "^9.39.2",
-    "eslint-config-next": "16.0.10",
+    "eslint-config-next": "16.2.10",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unused-imports": "^4.3.0",

@@ -1,6 +1,8 @@
-import { AspectRatio, Box, Heading, useBreakpointValue } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import ContentBox from '@/components/ContentBox';
+import AspectRatio from '@/components/ui/AspectRatio';
+import Heading from '@/components/ui/Heading';
+import { Box } from '@/styled-system/jsx';
 
 const images = ['images/tuba.jpg', 'images/ocarina.jpg', 'images/bike.jpg'];
 
@@ -24,21 +26,22 @@ const Header = () => {
           left={0}
           w='100%'
           h='100%'
-          bg={`center/cover url("${img}")`}
-          opacity={i === index ? 1 : 0}
-          transition='opacity 1s ease-in-out'
+          bgPosition='center'
+          bgSize='cover'
+          transitionProperty='opacity'
+          transitionDuration='1s'
+          transitionTimingFunction='ease-in-out'
+          style={{ backgroundImage: `url("${img}")`, opacity: i === index ? 1 : 0 }}
         />
       ))}
       <Box position='relative' zIndex={1} p={4}>
-        <AspectRatio ratio={16 / 9}>
+        <AspectRatio>
           <Heading
             as='h1'
             pb='30%'
-            size={useBreakpointValue(['xl', '3xl', '4xl'])}
-            textShadow='2px 2px var(--chakra-colors-teal),
-                      -2px 2px var(--chakra-colors-teal),
-                      2px -2px var(--chakra-colors-teal),
-                      -2px -2px var(--chakra-colors-teal)'
+            fontSize={{ base: '3xl', sm: '5xl', md: '7xl' }}
+            lineHeight={{ base: 1.33, sm: 1, md: 1 }}
+            textShadow='2px 2px var(--colors-teal), -2px 2px var(--colors-teal), 2px -2px var(--colors-teal), -2px -2px var(--colors-teal)'
           >
             Morisaki Mikiya
           </Heading>

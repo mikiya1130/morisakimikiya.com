@@ -1,10 +1,11 @@
-import { Center, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MdMail } from 'react-icons/md';
 import ContentBox from '@/components/ContentBox';
 import FormItem from '@/components/FormItem';
 import RedRoundButton from '@/components/RedRoundButton';
+import Text from '@/components/ui/Text';
+import { Center } from '@/styled-system/jsx';
 import { FormDataType } from '@/types/FormType';
 
 const Contact = () => {
@@ -78,7 +79,7 @@ const Contact = () => {
           }}
         />
         <Center>
-          <RedRoundButton mt={4} type='submit' isDisabled={!isValid} isLoading={isSubmitting}>
+          <RedRoundButton mt={4} type='submit' disabled={!isValid} loading={isSubmitting}>
             送信
           </RedRoundButton>
         </Center>
