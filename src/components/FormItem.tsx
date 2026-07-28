@@ -1,6 +1,7 @@
-import { FormControl, FormErrorMessage, FormLabel } from '@chakra-ui/react';
+import { Field } from '@ark-ui/react/field';
 import { FieldError, RegisterOptions, UseFormRegister } from 'react-hook-form';
 import InputArea from '@/components/InputArea';
+import { css } from '@/styled-system/css';
 import { FormDataType, FormIdType } from '@/types/FormType';
 
 type Props = {
@@ -9,18 +10,38 @@ type Props = {
   label: string;
   error?: FieldError;
   register: UseFormRegister<FormDataType>;
-  options: RegisterOptions;
+  options: RegisterOptions<FormDataType, FormIdType>;
 };
+
+const rootStyle = css({
+  w: '100%',
+  _focusWithin: { '& > label': { color: 'teal' } },
+});
+
+const labelStyle = css({
+  display: 'block',
+  fontWeight: 'medium',
+  transitionProperty: 'var(--transition-property-common)',
+  transitionDuration: 'normal',
+  mt: 2,
+});
+
+const errorTextStyle = css({
+  display: 'flex',
+  alignItems: 'center',
+  color: 'red',
+  mt: 2,
+  fontSize: 'sm',
+  lineHeight: 'normal',
+});
 
 const FormItem = ({ kind, id, label, error, register, options }: Props) => {
   return (
-    <FormControl id={id} isInvalid={!!error}>
-      <FormLabel mt={2} mb={0} htmlFor={id} _focus={{ color: 'teal' }}>
-        {label}
-      </FormLabel>
+    <Field.Root id={id} invalid={!!error} className={rootStyle}>
+      <Field.Label className={labelStyle}>{label}</Field.Label>
       <InputArea kind={kind} id={id} register={register} options={options} />
-      <FormErrorMessage color='red'>{error && error.message}</FormErrorMessage>
-    </FormControl>
+      <Field.ErrorText className={errorTextStyle}>{error && error.message}</Field.ErrorText>
+    </Field.Root>
   );
 };
 

@@ -1,8 +1,10 @@
-import { Grid, GridItem, Heading, Icon, Image, Wrap } from '@chakra-ui/react';
-import { isArray } from '@chakra-ui/utils';
 import { Fragment, ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import Star from '@/components/Star';
+import Heading from '@/components/ui/Heading';
+import Icon from '@/components/ui/Icon';
+import Image from '@/components/ui/Image';
+import { Grid, GridItem, Wrap } from '@/styled-system/jsx';
 
 type Props = {
   title: string | string[];
@@ -12,8 +14,8 @@ type Props = {
 };
 
 const SkillGrid = ({ title, logo, star, children }: Props) => {
-  const titleList = isArray<string>(title) ? title : [title];
-  const logoList = isArray<string | IconType>(logo) ? logo : [logo];
+  const titleList = Array.isArray(title) ? title : [title];
+  const logoList = Array.isArray(logo) ? logo : [logo];
 
   return (
     <Grid
@@ -24,11 +26,11 @@ const SkillGrid = ({ title, logo, star, children }: Props) => {
       boxShadow='0px 1px 1px 0px'
       placeItems='center'
       gap={4}
-      templateAreas="'logo     title'
+      gridTemplateAreas="'logo     title'
                      'logo     star'
                      'content content'"
-      templateColumns='70px 1fr'
-      templateRows='max-content max-content 1fr'
+      gridTemplateColumns='70px 1fr'
+      gridTemplateRows='max-content max-content 1fr'
     >
       <GridItem gridArea='title'>
         <Heading as='h4' size='md'>
@@ -46,7 +48,7 @@ const SkillGrid = ({ title, logo, star, children }: Props) => {
             typeof logo === 'string' ? (
               <Image key={index} src={`logos/${logo}.svg`} alt={logo} boxSize='50px' />
             ) : (
-              <Icon key={index} as={logo} boxSize='50px' />
+              <Icon key={index} as={logo} size='logo' />
             ),
           )}
         </Wrap>
