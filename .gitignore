@@ -36,6 +36,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# panda css
+/src/styled-system/
+
 # project
 /public/env
 /public/library

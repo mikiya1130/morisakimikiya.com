@@ -6,6 +6,10 @@ const baseNodeResolver = importResolverSettings.node ?? {};
 const baseTsResolver = importResolverSettings.typescript ?? {};
 
 const config = [
+  {
+    // Panda CSS の自動生成物は lint 対象外
+    ignores: ['src/styled-system/**'],
+  },
   ...nextConfig,
   {
     name: 'project-customizations',

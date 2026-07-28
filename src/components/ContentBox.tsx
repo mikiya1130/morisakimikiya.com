@@ -1,6 +1,8 @@
-import { Box, BoxProps, Center, Heading, Icon } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { IconType } from 'react-icons';
+import Heading from '@/components/ui/Heading';
+import Icon from '@/components/ui/Icon';
+import { Box, BoxProps, Center } from '@/styled-system/jsx';
 
 type CustomProps = {
   icon?: IconType;
@@ -12,7 +14,7 @@ type Props = BoxProps & CustomProps;
 
 const ContentBox = ({ icon, title, children, ...boxProps }: Props) => {
   return (
-    <Box w='full' p={4} borderRadius={20} bg='white' color='black' {...boxProps}>
+    <Box w='full' p={4} borderRadius='20px' bg='white' color='black' {...boxProps}>
       {title != undefined && (
         <Heading mb={4}>
           <Center>
