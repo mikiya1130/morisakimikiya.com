@@ -7,9 +7,6 @@ const globalCss = defineGlobalStyles({
     textRendering: 'optimizeLegibility',
     touchAction: 'manipulation',
   },
-  'h1, h2, h3, h4, h5, h6': {
-    textWrap: 'wrap',
-  },
   body: {
     position: 'relative',
     minHeight: '100%',
