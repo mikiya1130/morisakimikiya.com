@@ -43,3 +43,6 @@ yarn-error.log*
 /public/env
 /public/library
 /public/llms.txt
+
+# typescript
+next-env.d.ts
