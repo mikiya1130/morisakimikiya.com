@@ -109,5 +109,6 @@ export const buildLlmsTxt = ({ site, profile, skill, link }: LlmsTxtInput): stri
  * llms.txt を生成して public/ 配下へ書き出す（ビルド時専用）
  */
 export const writeLlmsTxt = (input: LlmsTxtInput): void => {
-  writeFileSync(path.join(process.cwd(), 'public', 'llms.txt'), buildLlmsTxt(input));
+  const utf8Bom = '\uFEFF';
+  writeFileSync(path.join(process.cwd(), 'public', 'llms.txt'), utf8Bom + buildLlmsTxt(input));
 };
