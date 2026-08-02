@@ -1,14 +1,14 @@
 import { Fragment, ReactNode } from 'react';
-import { IconType } from 'react-icons';
 import Star from '@/components/Star';
 import Heading from '@/components/ui/Heading';
 import Icon from '@/components/ui/Icon';
 import Image from '@/components/ui/Image';
+import { iconRegistry } from '@/lib/icon-registry';
 import { Grid, GridItem, Wrap } from '@/styled-system/jsx';
 
 type Props = {
   title: string | string[];
-  logo: string | string[] | IconType | IconType[];
+  logo: string | string[];
   star: number;
   children: ReactNode;
 };
@@ -44,11 +44,11 @@ const SkillGrid = ({ title, logo, star, children }: Props) => {
       </GridItem>
       <GridItem gridArea='logo'>
         <Wrap justify='center'>
-          {logoList.map((logo: string | IconType, index: number) =>
-            typeof logo === 'string' ? (
-              <Image key={index} src={`logos/${logo}.svg`} alt={logo} boxSize='50px' />
+          {logoList.map((logo: string, index: number) =>
+            logo.startsWith('icon:') ? (
+              <Icon key={index} as={iconRegistry[logo]} size='logo' />
             ) : (
-              <Icon key={index} as={logo} size='logo' />
+              <Image key={index} src={`logos/${logo}.svg`} alt={logo} boxSize='50px' />
             ),
           )}
         </Wrap>

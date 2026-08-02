@@ -42,3 +42,4 @@ yarn-error.log*
 # project
 /public/env
 /public/library
+/public/llms.txt
