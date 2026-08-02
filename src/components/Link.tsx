@@ -1,16 +1,21 @@
 import { MdLink } from 'react-icons/md';
 import ContentBox from '@/components/ContentBox';
+import RichContent from '@/components/RichContent';
 import Heading from '@/components/ui/Heading';
 import SimpleGrid from '@/components/ui/SimpleGrid';
 import TextLink from '@/components/ui/TextLink';
-import { linkList, LinkType } from '@/data/link';
+import { LinkData, LinkItem } from '@/lib/data-schema';
 import { Box } from '@/styled-system/jsx';
 
-const Link = () => {
+type Props = {
+  data: LinkData;
+};
+
+const Link = ({ data }: Props) => {
   return (
     <ContentBox icon={MdLink} title='LINK'>
       <SimpleGrid>
-        {linkList.map((link: LinkType, index: number) => (
+        {data.items.map((item: LinkItem, index: number) => (
           <Box
             key={index}
             p={2}
@@ -20,11 +25,11 @@ const Link = () => {
             boxShadow='0px 1px 1px 0px'
           >
             <Heading as='h4' size='md' textAlign='center'>
-              <TextLink href={link.link} target='_blank' rel='noopener' color='red'>
-                {link.title}
+              <TextLink href={item.link} target='_blank' rel='noopener' color='red'>
+                {item.title}
               </TextLink>
             </Heading>
-            {link.content}
+            <RichContent src={item.content} />
           </Box>
         ))}
       </SimpleGrid>

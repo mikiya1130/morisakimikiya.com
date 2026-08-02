@@ -1,11 +1,12 @@
+import RichContent from '@/components/RichContent';
 import SkillGrid from '@/components/SkillGrid';
 import Heading from '@/components/ui/Heading';
 import SimpleGrid from '@/components/ui/SimpleGrid';
-import { SkillType } from '@/data/skill';
+import { SkillItem } from '@/lib/data-schema';
 
 type Props = {
   name: string;
-  skillList: SkillType[];
+  skillList: SkillItem[];
   cols: 2 | 3;
 };
 
@@ -16,9 +17,9 @@ const SkillGroup = ({ name, skillList, cols }: Props) => {
         {name}
       </Heading>
       <SimpleGrid cols={cols}>
-        {skillList.map((skill: SkillType, index: number) => (
+        {skillList.map((skill: SkillItem, index: number) => (
           <SkillGrid key={index} title={skill.title} logo={skill.logo} star={skill.star}>
-            {skill.content}
+            <RichContent src={skill.content} listWordBreak={skill.wordBreak} />
           </SkillGrid>
         ))}
       </SimpleGrid>
